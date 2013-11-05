@@ -11,3 +11,4 @@ pickle-email-*.html
 /log/*
 /tmp/*
 /spec/tmp/*
+/public/assets/*
