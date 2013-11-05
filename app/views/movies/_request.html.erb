@@ -1,0 +1,9 @@
+<% content_for :javascript do %>
+  <script type='text/javascript'>
+    GetPrices(
+      '<%= params[:id] %>',
+      '<%= CGI.escape(@movie.name) %>',
+      '<%= CGI.escape(@movie.director) if @movie.director %>',
+      '<%= CGI.escape(@movie.year) if @movie.year %>');
+  </script>
+<% end %>

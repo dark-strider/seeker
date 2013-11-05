@@ -1,0 +1,14 @@
+<% pic = actor['profile_path'] ? TheMovie.poster(actor['profile_path'],'w45') : 'profile.jpg' %>
+<% url = "http://www.themoviedb.org/person/#{actor['id']}" %>
+
+<div class='actor'>
+  <div class='pic'>
+    <%= link_to (image_tag pic, class: 'img-polaroid'), url %>
+  </div>
+
+  <div class='names'>
+    <b><%= link_to actor['name'], url %></b>
+    <br>
+    <%= actor['character'] %>
+  </div>
+</div>

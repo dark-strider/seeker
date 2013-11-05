@@ -1,0 +1,14 @@
+<div id='buy_container'>
+  <% if @google && @google[:url].present? && @google[:price].present? %>
+    <%= link_to @google[:price], @google[:url], class: 'buy-button upper' %>
+  <% else %>
+    <a class='buy-button upper'>Not available</a>
+  <% end %>
+</div>
+
+<% if @related.present? %>
+  <div id='related_container'>
+    <p class='upper'>Look at related</p>
+    <%= render partial: 'related', collection: @related %>
+  </div>
+<% end %>

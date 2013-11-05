@@ -1,0 +1,12 @@
+<%= form_tag root_path, method: 'get', id: 'seeker' do %>
+  <div class='input-append'>
+    <%= text_field_tag :search, params[:search], placeholder: 'Serenity .....', class: 'span6' %>
+    <%= submit_tag 'Search', name: nil, class: 'btn' %>
+  </div>
+<% end %>
+
+<div id='movies_container'>
+  <div class='movie-logo upper'>
+    What kind of movies do you like..?
+  </div>
+</div>

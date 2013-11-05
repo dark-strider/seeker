@@ -1,0 +1,27 @@
+<% pic = movie['poster_path'] ? TheMovie.poster(movie['poster_path'],'w92') : 'small.jpg' %>
+<% url = movie_path(movie['id']) %>
+
+<div class='movie'>
+  <div class='pic'>
+    <%= link_to (image_tag pic, class: 'img-polaroid'), url %>
+  </div>
+
+  <div class='movie-info'>
+    <p><%= link_to movie['title'], url %></p>
+
+    <span class='badge year'>
+      <%= movie['release_date'][0..3] %>
+    </span>
+
+    <div class='ratings'>
+      <span class='badge average'>
+        <div class='icon star'></div>
+        <%= movie['vote_average'] %>
+      </span>
+      <span class='badge count'>
+        <%= movie['vote_count'] %>
+        <div class='icon users'></div>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class='top'>
+  <%= link_to @movie.name, "http://www.themoviedb.org/movie/#{params[:id]}" %>
+</div>
+
+<div class='side'>
+  <div class='play'>
+    <div class='img-polaroid'>
+      <%= @movie.middle ? (link_to (image_tag @movie.middle), @movie.large) : (image_tag 'middle.jpg') %>
+    </div>
+
+    <div class='ratings'>
+      <span class='badge average'>
+        <div class='icon star'></div>
+        <%= @movie.rating %>
+      </span>
+      <span class='badge count'>
+        <%= @movie.count %>
+        <div class='icon users'></div>
+      </span>
+    </div>
+
+    <div class='store_container'>
+      <div class='google-logo'></div>
+      <div id='store_result'>
+        <div id='buy_container'>
+          <%= render 'request' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @movie.backdrop.present? %>
+  <div class='backdrop'>
+    <%= image_tag @movie.backdrop %>
+  </div>
+<% end %>
+
+<div class='info'>
+  <div class='tagline upper'>
+    <% if @movie.tagline.present? %>
+      <%= @movie.tagline %>
+    <% end %>
+  </div>
+  
+  <% if @movie.overview.present? %>
+    <div class='section'>
+      <p class='upper'>Synopsis</p>
+      <%= @movie.overview %>
+    </div>
+  <% end %>
+
+  <% if @movie.year.present? %>
+    <div class='section'>
+      <span class='year upper'>Year</span>
+      <%= @movie.year %>
+    </div>
+  <% end %>
+
+  <% if @movie.director.present? %>
+    <div class='section'>
+      <span class='director upper'>Director</span>
+      <%= @movie.director %>
+    </div>
+  <% end %>
+
+  <% if @movie.actors.any? %>
+    <div class='section'>
+      <p class='upper'>Actors</p>
+      <div class='actors-container'>
+        <%= render partial: 'actor', collection: @movie.actors %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class='endline'></div>

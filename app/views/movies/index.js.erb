@@ -1,0 +1,1 @@
+$('#movies_container').html("<%= escape_javascript( render(partial: 'movie', collection: @movies) || raw("<div class='movie-logo no-one upper'>Sorry... we couldn't find any movies</div>") ) %>");

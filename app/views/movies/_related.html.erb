@@ -1,0 +1,10 @@
+<div class='related'>
+  <div class='pic'>
+    <%= link_to (image_tag related[:poster], class: 'img-polaroid'), related[:url] %>
+  </div>
+
+  <div class='related-info'>
+    <p><%= link_to related[:name], related[:url] %></p>
+    <%= link_to related[:price], related[:url], class: 'price-button upper' %>
+  </div>
+</div>

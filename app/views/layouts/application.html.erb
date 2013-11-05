@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Seeker</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <h1>
+          <%= link_to 'The Seeker', :root %><small> of Truth</small>
+        </h1>
+      </div>
+
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+
+    <div>
+      <%= javascript_include_tag 'application' %>
+      <%= yield :javascript %>
+    </div>
+  </body>
+</html>
