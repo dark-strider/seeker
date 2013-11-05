@@ -4,7 +4,6 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'httparty'
 gem 'nokogiri'
-gem 'puma'
 
 group :assets do
   gem 'therubyracer', '~> 0.11.1', require: 'v8', platforms: :ruby
@@ -16,4 +15,8 @@ end
 group :development, :test do
   gem 'rspec-rails'
   # gem 'cucumber-rails'
+end
+
+group :production do
+  gem 'thin'
 end
