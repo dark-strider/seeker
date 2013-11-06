@@ -1,0 +1,10 @@
+=The Seeker[http://the-seeker.herokuapp.com]
+Small app for searching information about movies via <b>TheMovieDB's API</b>, with searching prices on 
+<b>Google Play Store</b>, if it's available.
+
+* Thin wrapper around TheMovieDB's APIv3 and HTTP requests for Google Play use +HTTParty+ gem.
+
+* The Google Play information (links, prices) gotten by screen scraping (+Nokogiri+ parser).
+* Screens: one[https://raw.github.com/dark-strider/seeker/master/doc/seeker_1.png], two[https://raw.github.com/dark-strider/seeker/master/doc/seeker_2.png], three[https://raw.github.com/dark-strider/seeker/master/doc/seeker_3.png].
+
+<em><b>Notice that Google Play Store not available in some countries.!</b></em>
